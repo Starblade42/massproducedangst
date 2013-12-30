@@ -47,7 +47,7 @@ class Article(models.Model):
 
 
 	def __unicode__(self):  # Python 3: def __str__(self):
-        	return self.articleID + ", " + articleType +": " + self.title 
+        	return self.articleID + ", " + self.articleType +": " + self.title 
 
 #Updates	authorID	articleID	timestamp
 #This will create and Auto-Incrementing ID primary key!

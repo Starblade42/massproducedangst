@@ -7,15 +7,12 @@ from dblog.models import Author
 from dblog.models import Bio
 from dblog.models import Blog
 from dblog.models import FavoriteLink
-from dblog.models import Media
-from dblog.models import Review
-from dblog.models import Tutorial
 from dblog.models import Update
 
 def index(request):
     author_list = Author.objects.order_by('lastName')
     context = {'author_list': author_list}
-    return render(request, 'dblog/index.html', context)
+    return render(request, 'dblog/main.html', context)
 
 def detail(request, author_ID):
 	author = get_object_or_404(Author, authorID__exact=author_ID)
