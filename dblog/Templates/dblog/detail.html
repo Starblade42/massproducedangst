@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'dblog/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'dblog/bootstrap.min.css' %}"/>
+
+<h2>User: {{ author.authorID }}</h2>
+<h3>My Blogs</h3>
+<ul>
+{% for blog in blog_list %}
+	{% if blog.authorID == author %}
+    <li><a href="{{ blog.blogID }}">{{ blog.title }}</a></li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+<h3>My Favorite Links</h3>
+<ul>
+{% for favoritelink in link_list %}
+	{% if favoritelink.authorID == author %}
+    <li> Favorite: <a href="{{ favoritelink.URL }}">{{ favoritelink.title }}</a></li>
+	{% endif %}
+{% endfor %}
+
+</ul>
+
+<h3>About Me</h3>
+{% for bio in bio_list %}
+	{% if bio.authorID == author %}
+    	<h4>
+    		My Hometown: {{ bio.hometown}}
+    	</h4>
+    	<p>
+    		{{ bio.body }}
+    	</p>
+	{% endif %}
+{% endfor %}

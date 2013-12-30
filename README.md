@@ -1,4 +1,4 @@
-massproducedangst
-=================
+dolphin
+=======
 
-A codebase for my website MassProducedAngst
+IT350 project for a Django based website
